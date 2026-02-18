@@ -1,0 +1,19 @@
+import random
+def winner(u, c):
+    if u == c: return "Tie"
+    return "You Win" if (u-c) % 3 == 1 else "Computer Wins"
+def main():
+    print("0:Stone  1:Paper  2:Scissors  3:Exit")
+    while True:
+        try:
+            u = int(input("Enter choice: "))
+            if u == 3: break
+            if u not in [0,1,2]:
+                print("Invalid"); continue
+            c = random.randint(0,2)
+            print(f"You:{u}  Computer:{c}")
+            print(winner(u,c))
+        except ValueError:
+            print("Numbers only")
+if __name__ == "__main__":
+    main()
