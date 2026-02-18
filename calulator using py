@@ -1,0 +1,26 @@
+def calc():
+    try:
+        expr = input("\nEnter expression (example: 5+3) or type exit: ")
+        if expr.lower() == "exit":
+            print("Calculator Closed.")
+            return
+        if "+" in expr:
+            a, b = expr.split("+")
+            print("Result =", int(a) + int(b))
+        elif "-" in expr:
+            a, b = expr.split("-")
+            print("Result =", int(a) - int(b))
+        elif "*" in expr:
+            a, b = expr.split("*")
+            print("Result =", int(a) * int(b))
+        elif "/" in expr:
+            a, b = expr.split("/")
+            print("Result =", int(a) / int(b))
+        else:
+            print("Invalid Expression!")
+    except ValueError:
+        print("Try only numericals.")
+    except ZeroDivisionError:
+        print("Zero can't be a denominator. Try another number.")
+    calc()
+calc()
