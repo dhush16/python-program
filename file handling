@@ -1,0 +1,22 @@
+f=open("list.py","r")
+print(f)
+f
+file=f.read()
+print(file)
+print(f.read())
+
+f=open("story.txt","w")
+f
+f.write("One")
+f.close()
+f=open("story.txt","r")
+file=f.read()
+file
+
+f=open("story.txt","a")
+f.write(" fine day")
+f.close()
+f=open("story.txt","r")
+file=f.read()
+file
+file[:3]
